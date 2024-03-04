@@ -1,7 +1,6 @@
 import requests #pip install requests
 import zipfile
 import os
-import yt_dlp as youtube_dl # pip install yt-dlp
 import time
 
 def playonyt_stream(search):
@@ -63,13 +62,6 @@ def playonyt_stream(search):
             break
     if lst[count - 5] == "/results":
         return None
-        
-    link = f"https://www.youtube.com{lst[count - 5]}"
-
-    ydl = youtube_dl.YoutubeDL(ydl_opts)
-    info = ydl.extract_info(link, download=False)
-    url = info['url']
-    duration = info['duration']
 
     Instance = vlc.Instance()
     player = Instance.media_player_new()
@@ -77,4 +69,3 @@ def playonyt_stream(search):
     Media.get_mrl()
     player.set_media(Media)
     player.play()
-    time.sleep(duration)

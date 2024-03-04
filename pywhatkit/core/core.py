@@ -129,7 +129,7 @@ def send_message(message: str, receiver: str, wait_time: int) -> None:
             index += 1
         press("enter")
         
-    findtextbox()
+    # findtextbox()
     press("enter")
 
 
@@ -207,5 +207,5 @@ def send_image(path: str, caption: str, receiver: str, wait_time: int) -> None:
     else:
         hotkey("ctrl", "v")
     time.sleep(1)
-    findtextbox()
+    # findtextbox()
     press("enter")
